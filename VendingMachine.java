@@ -18,15 +18,21 @@ public class VendingMachine {
     }
 
     /**
-     * Initializes the vending machine with default products.
+     * Initializes the vending machine with specific products.
      */
     private void initializeProducts() {
+        String[] productNames = {"Chocolate", "Chips", "Soda", "Water", "Juice", "Candy", "Cookies", "Gum", "Granola Bar"};
+        double[] productPrices = {1.5, 2.0, 1.75, 1.0, 2.5, 1.25, 1.75, 0.75, 2.0};
+
+        int index = 0;
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
-                products[i][j] = new Product("Item" + (i * COLS + j + 1), (i + 1) * 1.5);
+                products[i][j] = new Product(productNames[index], productPrices[index]);
+                index++;
             }
         }
     }
+
 
     /**
      * Displays the main menu to the user.
