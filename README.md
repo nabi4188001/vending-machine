@@ -33,7 +33,8 @@ Control structures used include:
 
 ### Challenges Faced
 
-1. **Issues with merging the branches:** 
+1. **Issues with merging the branches**
+2. ****
 
 
 ### GitHub log:
