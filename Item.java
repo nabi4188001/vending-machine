@@ -31,3 +31,17 @@ class Item {
         return price;
     }
 }
+
+/**
+ * Derived class from Item to represent products in the vending machine.
+ */
+class Product extends Item {
+    /**
+     * Constructor to create a product with name and price.
+     * @param name The name of the product.
+     * @param price The price of the product.
+     */
+    public Product(String name, double price) {
+        super(name, price);
+    }
+}
