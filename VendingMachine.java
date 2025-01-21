@@ -1,7 +1,12 @@
 import java.util.Scanner;
+
 /**
  * Represents a vending machine with a menu-driven interface.
+ *
+ * This class handles the display of products, product code selection, purchase flow, and payment options.
+ * It also tracks total sales for the machine.
  */
+
 public class VendingMachine {
     private static final int ROWS = 3;
     private static final int COLS = 3;
@@ -56,6 +61,13 @@ public class VendingMachine {
         }
     }
 
+    /**
+     * Allows the user to purchase a product by entering the product code.
+     *
+     *
+     * @param scanner The scanner object used for capturing user input.
+     * @see #displayGraphicalInterface() for how the product codes are displayed.
+     */
     private void buyProduct(Scanner scanner) {
         displayGraphicalInterface();
         System.out.print("Enter the product code (1-9): ");
@@ -114,6 +126,19 @@ public class VendingMachine {
         displayGraphicalInterface();
     }
 
+    /**
+     * Displays the layout of the vending machine, including product codes, names, and prices.
+     *
+     * Example output:
+     *
+     * Vending Machine Layout:
+     * Code Item                 Price      Code Item                 Price      Code Item                 Price
+     * [ 1   Chocolate           $1.50     ] [ 2   Chips              $2.00     ] [ 3   Soda               $1.75     ]
+     * [ 4   Water               $1.00     ] [ 5   Juice              $2.50     ] [ 6   Candy              $1.25     ]
+     * [ 7   Cookies             $1.75     ] [ 8   Gum                $0.75     ] [ 9   Granola Bar        $2.00     ]
+     *
+     * This method helps users identify which product to purchase by its code.
+     */
     private void displayGraphicalInterface() {
         System.out.println("\nVending Machine Layout:");
         // Print header row
