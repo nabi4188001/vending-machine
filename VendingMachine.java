@@ -27,3 +27,37 @@ public class VendingMachine {
             }
         }
     }
+
+    /**
+     * Displays the main menu to the user.
+     */
+    public void displayMenu() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(WELCOME_MESSAGE);
+        while (true) {
+            System.out.println("\nVending Machine Menu:");
+            System.out.println("1. Buy a product");
+            System.out.println("2. Restock the machine");
+            System.out.println("3. Display available products");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    buyProduct(scanner);
+                    break;
+                case 2:
+                    restockMachine(scanner);
+                    break;
+                case 3:
+                    displayProducts();
+                    break;
+                case 4:
+                    System.out.println("Total sales: $" + totalSales);
+                    return;
+                default:
+                    System.out.println("Invalid option. Try again.");
+            }
+        }
+    }
