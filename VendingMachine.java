@@ -103,5 +103,24 @@ public class VendingMachine {
             System.out.println("Invalid position.");
         }
     }
+    /**
+     * Displays all available products in the vending machine.
+     */
+    private void displayProducts() {
+        System.out.println("\nAvailable Products:");
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                System.out.println("Row " + i + " Col " + j + ": " + products[i][j].getName() + " - $" + products[i][j].getPrice());
+            }
+        }
+    }
 
+    /**
+     * Main method to run the vending machine application.
+     * @param args Command line arguments.
+     */
+    public static void main(String[] args) {
+        VendingMachine vm = new VendingMachine();
+        vm.displayMenu();
+    }
 }
