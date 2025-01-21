@@ -61,3 +61,47 @@ public class VendingMachine {
             }
         }
     }
+
+    /**
+     * Handles product purchase by the user.
+     *
+     * @param scanner Scanner object to read user input.
+     */
+    private void buyProduct(Scanner scanner) {
+        System.out.print("Enter row (0-2): ");
+        int row = scanner.nextInt();
+        System.out.print("Enter col (0-2): ");
+        int col = scanner.nextInt();
+
+        if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
+            Product product = products[row][col];
+            System.out.println("You bought: " + product.getName() + " for $" + product.getPrice());
+            totalSales += product.getPrice();
+        } else {
+            System.out.println("Invalid selection.");
+        }
+    }
+
+    /**
+     * Restocks a specific product in the vending machine.
+     * @param scanner Scanner object to read user input.
+     */
+    private void restockMachine(Scanner scanner) {
+        System.out.print("Enter row (0-2): ");
+        int row = scanner.nextInt();
+        System.out.print("Enter col (0-2): ");
+        int col = scanner.nextInt();
+        System.out.print("Enter new product name: ");
+        String name = scanner.next();
+        System.out.print("Enter new product price: ");
+        double price = scanner.nextDouble();
+
+        if (row >= 0 && row < ROWS && col >= 0 && col < COLS) {
+            products[row][col] = new Product(name, price);
+            System.out.println("Product restocked.");
+        } else {
+            System.out.println("Invalid position.");
+        }
+    }
+
+}
